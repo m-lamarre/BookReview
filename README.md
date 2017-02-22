@@ -1,24 +1,27 @@
-# README
+# Ruby on Rails Book Review Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting started
 
-Things you may want to cover:
+Clone the repo and install the needed gems:
 
-* Ruby version
+```
+$ bundle install --without production
+```
 
-* System dependencies
+Migrate the database:
 
-* Configuration
+```
+$ rails db:migrate
+```
 
-* Database creation
+Run the test suite to verify that everything is working correctly:
 
-* Database initialization
+```
+$ rails test
+```
 
-* How to run the test suite
+If the test suite passes, run the app in a local server:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+$ rails server
+```
