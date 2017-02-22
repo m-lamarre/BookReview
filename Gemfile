@@ -20,10 +20,8 @@ gem 'slim-rails'
 gem 'foundation-rails'
 gem 'bcrypt'
 
-# Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 
-# Use Capistrano for deployment
 # gem 'capistrano-rails', group: :developme
 
 group :development, :test do
