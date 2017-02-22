@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   validates(:email, presence: true,
             length: { maximum: 100 },
-            uniqueness: { case_sensitive: false }
+            uniqueness: { case_sensitive: false },
             format: { with: EMAIL_REGEX })
 
   validates(:password, presence: true,
