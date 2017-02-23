@@ -5,5 +5,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  root 'home#index'
+  root 'books#index'
+
+  resources :books
 end

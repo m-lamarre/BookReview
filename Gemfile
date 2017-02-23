@@ -19,6 +19,7 @@ gem 'devise'
 gem 'slim-rails'
 gem 'foundation-rails'
 gem 'bcrypt'
+gem 'simple_form'
 
 # gem 'redis', '~> 3.0'
 
