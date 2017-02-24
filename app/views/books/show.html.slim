@@ -1,2 +1,14 @@
-h1
-  | Show Books
+h2
+  = @book.title
+br
+h3
+  = @book.author 
+br
+p 
+  = @book.description
+
+= link_to "Edit Book", edit_book_path(@book)  
+br
+= link_to "Delete Book", book_path(@book), method: :delete, data: { confirm: "Are you sure that you want to Delete this Book?" }
+br
+= link_to "Back", root_path

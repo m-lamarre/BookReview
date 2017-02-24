@@ -15,3 +15,25 @@
 //= require foundation_and_overrides
 
  */
+
+ $medium-gray: #cacaca;
+ $global-padding: 1rem;
+ $global-radius: 3px;
+
+ $form-border-color: $medium-gray;
+ $form-padding: $global-padding;
+ $form-radius: $global-radius;
+
+ .log-in-form {
+   border: 1px solid $form-border-color;
+   padding: $form-padding;
+   border-radius: $form-radius;
+ }
+
+ #home_title a {
+   color: black;
+ }
+
+h1 {
+  text-decoration: underline;
+}

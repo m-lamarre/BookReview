@@ -10,4 +10,37 @@ html[lang="en"]
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     link[href="/assets/favicon.ico" rel="shortcut icon" type="image/x-icon"]
   body
+    .top-bar
+      .top-bar-title
+        span[data-responsive-toggle="responsive-menu" data-hide-for="medium"]
+          / button.menu-icon.dark[type="button" data-toggle]
+        strong#home_title
+          = link_to "TheBookReviewer", root_path 
+      #responsive-menu
+        .top-bar-left
+          ul.dropdown.menu[data-dropdown-menu]
+            li
+              = link_to "Sign Up", new_user_registration_path
+            - if user_signed_in?
+              li 
+                = link_to "Sign Out", destroy_user_session_path, method: :delete
+            - else
+              li 
+                = link_to "Log In", new_user_session_path
+            li
+              a[href="#"]
+                | Three
+        .top-bar-right
+          ul.menu
+            li
+              input[type="search" placeholder="Search"]
+            li
+              button.button[type="button"]
+                | Search
+                  
+    p.notice 
+      = notice
+    p.alert
+      = alert
+    
     = yield
