@@ -7,8 +7,10 @@ br
 p 
   = @book.description
 
-= link_to "Edit Book", edit_book_path(@book)  
-br
-= link_to "Delete Book", book_path(@book), method: :delete, data: { confirm: "Are you sure that you want to Delete this Book?" }
+- if user_signed_in?
+  - if @book.user_id == current_user.id 
+    = link_to "Edit Book", edit_book_path(@book)  
+    br
+    = link_to "Delete Book", book_path(@book), method: :delete, data: { confirm: "Are you sure that you want to Delete this Book?" }
 br
 = link_to "Back", root_path

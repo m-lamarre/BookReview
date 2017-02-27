@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  before_save { self.email = email.downcase }
-  
+  # before_save { self.email = email.downcase }
+
   def setup
     @user = User.new(username: "example_user", email: "test@test.com",
                       password: "pass123", password_confirmation: "pass123")
