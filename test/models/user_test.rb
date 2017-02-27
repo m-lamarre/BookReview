@@ -1,8 +1,10 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
+  before_save { self.email = email.downcase }
+  
   def setup
-    @user = User.new(username: "example_user", email: "test@email.com",
+    @user = User.new(username: "example_user", email: "test@test.com",
                       password: "pass123", password_confirmation: "pass123")
   end
 
@@ -28,10 +30,10 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "email address should be unique" do
-    unique_email = @user.dup
-    unique_email.email = @user.email.upcase
+    unique_user = @user.dup
+    unique_user.email = @user.email.upcase
     @user.save
-    assert_not unique_email.valid?
+    assert_not unique_user.valid?
   end
 
   test "password should be present" do

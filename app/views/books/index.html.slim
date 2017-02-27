@@ -1,8 +1,6 @@
-h1
+h2
   | Book Index
   
   - @books.each do |book|
-    h2
+    h3
       = link_to book.title, book_path(book)
-
-= link_to "Add a New Book", new_book_path
