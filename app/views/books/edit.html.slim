@@ -1,4 +1,15 @@
 h2 
   | Edit Book
-  
-= render 'form'
+br  
+  .row
+    .medium-6.medium-centered.large-4.large-centered.columns
+      .row.column.log-in-form
+        h4.text-center
+          | Book Details
+        br
+        = simple_form_for @book, :html => { :multipart => true } do |f|
+          = f.input :title
+          = f.input :author
+          = f.input :description
+          = f.select :category_id, @categories
+          = f.button :submit

@@ -28,10 +28,21 @@ html[lang="en"]
                 = link_to "Log In", new_user_session_path
         .top-bar-right
           ul.menu
-            - if user_signed_in?
+            li 
+              ul.dropdown.menu[data-dropdown-menu]
+                li
+                  a[href="#"]
+                    | Categories
+                  ul.menu
+                    - Category.all.each do |category|
+                      li
+                        = link_to category.name, books_path(category: category.name)
+              - if user_signed_in?
               li
-                = link_to "Add New Book", new_book_path
-              
+                = link_to "Add New Book", new_book_path    
+      script[src="js/vendor/jquery.js"]
+      script[src="js/foundation/foundation.js"]
+      script[src="js/foundation/foundation.dropdown.js"]
                   
     p.notice 
       = notice

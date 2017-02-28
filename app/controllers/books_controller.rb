@@ -3,7 +3,12 @@ class BooksController < ApplicationController
   before_action :find_book, only: [:show, :edit, :update, :destroy]
 
   def index
-    @books = Book.all.order("title DESC ")
+    if params[:category].blank?
+      @books = Book.all.order("title ASC ")
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @books = Book.where(:category_id => @category_id).order("title ASC")
+    end 
   end
 
   def new
@@ -28,9 +33,13 @@ class BooksController < ApplicationController
   end
 
   def edit
+    @categories = Category.all.map do |c|
+      [c.name, c.id]
+    end
   end
 
   def update
+    @book.category_id = params[:category_id]
     if @book.update(book_params)
       redirect_to book_path(@book)
     else

@@ -11,7 +11,8 @@ br
           = devise_error_messages!
           br
           .field
-            = f.input :username
+            = f.label :username
+            = f.text_field :username, autofocus: true
           .field
             = f.label :email
             = f.email_field :email

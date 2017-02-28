@@ -4,6 +4,10 @@ br
 h3
   = @book.author 
 br
+h4
+  | Category: 
+  = @book.category.name
+br
 p 
   = @book.description
 
