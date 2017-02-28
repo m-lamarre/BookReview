@@ -31,19 +31,16 @@ html[lang="en"]
             li 
               ul.dropdown.menu[data-dropdown-menu]
                 li
-                  a[href="#"]
+                  a
                     | Categories
                   ul.menu
                     - Category.all.each do |category|
                       li
                         = link_to category.name, books_path(category: category.name)
               - if user_signed_in?
-              li
-                = link_to "Add New Book", new_book_path    
-      script[src="js/vendor/jquery.js"]
-      script[src="js/foundation/foundation.js"]
-      script[src="js/foundation/foundation.dropdown.js"]
-                  
+                li
+                  = link_to "Add New Book", new_book_path
+                    
     p.notice 
       = notice
     p.alert

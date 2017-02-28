@@ -8,7 +8,7 @@ class BooksController < ApplicationController
     else
       @category_id = Category.find_by(name: params[:category]).id
       @books = Book.where(:category_id => @category_id).order("title ASC")
-    end 
+    end
   end
 
   def new
