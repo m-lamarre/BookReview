@@ -3,6 +3,11 @@ h2
 
 h1.current-category
   = params[:category]
+  
+- if @books.count == 0
+  h3
+    | There are currently no books in this category. :(
+- else
   - @books.each do |book|
     h3
       = link_to book.title, book_path(book)
