@@ -20,6 +20,7 @@ gem 'slim-rails'
 gem 'foundation-rails'
 gem 'bcrypt'
 gem 'simple_form'
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
 
 # gem 'redis', '~> 3.0'
 

@@ -1,15 +1,20 @@
-h2
-  = @book.title
-br
-h3
-  = @book.author 
-br
-h4
-  | Category: 
-  = @book.category.name
-br
-p 
-  = @book.description
+.row
+  h2
+    = @book.title
+  br
+  .medium-4.columns
+    = image_tag @book.book_img.url(:book_show), class: "book-show"
+    br
+  .medium-8.columns
+    h3
+      = @book.author 
+    br
+    h4
+      | Category: 
+      = @book.category.name
+    br
+    p 
+      = @book.description
 
 - if user_signed_in?
   - if @book.user_id == current_user.id 

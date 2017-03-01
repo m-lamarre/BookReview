@@ -8,6 +8,8 @@ h1.current-category
   h3
     | There are currently no books in this category. :(
 - else
-  - @books.each do |book|
-    h3
-      = link_to book.title, book_path(book)
+  .row
+    - @books.each do |book|
+      .small-6.large-3.columns
+        a href="/books/#{book.id}" 
+          = image_tag book.book_img.url(:book_index), class: "book"
