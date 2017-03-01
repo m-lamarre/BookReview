@@ -15,7 +15,13 @@
     br
     p 
       = @book.description
-
+br
+.row
+  .medium-4.columns
+    = render @book.reviews
+    div
+      = link_to "Add a Review for this book", new_book_review_path(@book) 
+    
 - if user_signed_in?
   - if @book.user_id == current_user.id 
     = link_to "Edit Book", edit_book_path(@book)  

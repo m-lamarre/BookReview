@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :books
+  has_many :reviews
 
   before_save { email.downcase! }
   EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i

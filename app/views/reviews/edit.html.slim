@@ -1,0 +1,13 @@
+h2 
+  | Edit Review
+br  
+  .row
+    .medium-6.medium-centered.large-4.large-centered.columns
+      .row.column.log-in-form
+        h4.text-center
+          | Review Details
+        br
+        = simple_form_for ([@book, @review]) do |f|
+          = f.input :rating
+          = f.input :comment
+          = f.button :submit

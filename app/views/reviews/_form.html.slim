@@ -1,0 +1,10 @@
+.row
+  .medium-6.medium-centered.large-4.large-centered.columns
+    .row.column.log-in-form
+      h4.text-center
+        | Book Review
+      br
+      = simple_form_for([@book, @book.reviews.build]) do |f|
+        = f.input :rating
+        = f.input :comment
+        = f.button :submit
