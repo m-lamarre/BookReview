@@ -13,6 +13,13 @@
       | Category: 
       = @book.category.name
     br
+    h4
+      | Average Rating
+      .average-review-rating data-score="#{@average_reviews}"
+    span
+      | Based on #{@book.reviews.count} reviews
+      br
+    br
     p 
       = @book.description
 br
@@ -29,3 +36,9 @@ br
     = link_to "Delete Book", book_path(@book), method: :delete, data: { confirm: "Are you sure that you want to Delete this Book?" }
 br
 = link_to "Back", root_path
+
+script
+  |  $('.review-rating').raty({ readOnly: true, score: function() { return $(this).attr('data-score'); }, path: '/assets/' }); 
+  
+script
+  |  $('.average-review-rating').raty({ readOnly: true, path: '/assets/', score: function() { return $(this).attr('data-score'); } });
