@@ -25,6 +25,8 @@
 br
 .row
   .medium-4.columns
+    h4
+      | Reviews
     = render @book.reviews
     div
       = link_to "Add a Review for this book", new_book_review_path(@book) 
